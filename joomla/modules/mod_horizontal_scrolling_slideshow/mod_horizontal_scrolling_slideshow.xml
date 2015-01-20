@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1.0" client="site" method="upgrade">
+	<name>Horizontal scrolling slideshow</name>
+	<author>Gopi Ramasamy</author>
+	<creationDate>May 2014</creationDate>
+	<copyright>(C) 2010 - 2014 www.gopiplus.com, LLC. All rights reserved.</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<authorEmail>gopiplus@gmail.com</authorEmail>
+	<authorUrl>http://www.gopiplus.com/extensions/2011/07/horizontal-scrolling-slideshow-joomla-module/</authorUrl>
+	<version>3.3</version>
+	<description>IHRSS_DESC</description>
+	<languages>
+		<language tag="en-GB">language/en-GB.mod_horizontal_scrolling_slideshow.ini</language>
+		<language tag="en-US">language/en-US.mod_horizontal_scrolling_slideshow.ini</language>
+	</languages>
+	<files>
+		<filename module="mod_horizontal_scrolling_slideshow">mod_horizontal_scrolling_slideshow.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>		
+		<filename>mod_horizontal_scrolling_slideshow.xml</filename>
+		<folder>tmpl</folder>
+		<folder>images</folder>
+		<folder>language</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="slideshow_type"
+					type="text"
+					default="jpg,png"
+					size="10"
+					label="IHRSS_IMAGE_TYPE"
+					description="IHRSS_IMAGE_TYPE_DESC" />
+				<field
+					name="slideshow_folder"
+					size="50"
+					type="text"
+					default="modules/mod_horizontal_scrolling_slideshow/images"
+					label="IHRSS_IMAGE_FOLDER"
+					description="IHRSS_IMAGE_FOLDER_DESC" />
+				<field
+					name="slideshow_link"
+					type="text"
+					size="50"
+					default="http://www.gopiplus.com"
+					label="IHRSS_IMAGE_LINK"
+					description="IHRSS_IMAGE_LINK_DESC" />
+				<field
+					name="slideshow_width"
+					type="text"
+					size="10"
+					default="300"
+					label="IHRSS_WIDTH"
+					description="IHRSS_WIDTH_DESC" />
+				<field
+					name="slideshow_height"
+					type="text"
+					size="10"
+					default="75"
+					label="IHRSS_HEIGHT"
+					description="IHRSS_HEIGHT_DESC" />
+				<field
+					name="slideshow_speed"
+					type="text"
+					size="10"
+					default="2"
+					label="IHRSS_SPEED"
+					description="IHRSS_SPEED_DESC" />
+				<field
+					name="slideshow_bgcolor"
+					type="text"
+					size="10"
+					default="#FFFFFF"
+					label="IHRSS_BGCOLOR"
+					description="IHRSS_BGCOLOR_DESC" />
+				<field
+					name="slideshow_gap"
+					type="text"
+					size="10"
+					default="5"
+					label="IHRSS_GAP"
+					description="IHRSS_GAP_DESC" />
+			</fieldset>
+			<fieldset
+				name="advanced">
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="IHRSS_MODULE"
+					description="IHRSS_MODULE_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

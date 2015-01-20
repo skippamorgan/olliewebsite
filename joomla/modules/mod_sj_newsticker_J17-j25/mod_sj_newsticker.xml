@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.7.0" client="site" method="upgrade">
+	<name>Sj News Ticker</name>
+	<creationDate>January 2012</creationDate>
+	<author>YouTech Company</author>
+	<copyright>Copyright (c) 2012 YouTech Company</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>contact@ytcvn.com</authorEmail>
+	<authorUrl>http://www.smartaddons.com</authorUrl>
+	<version>2.5</version>
+    <description>SJ_XML_DESCRIPTION</description>
+	<files>
+		<filename module="mod_sj_newsticker">mod_sj_newsticker.php</filename>
+		<filename>index.html</filename>
+		<folder>assets</folder>
+		<folder>core</folder>
+		<folder>language</folder>
+		<folder>tmpl</folder>
+	</files>   
+	<config>
+	
+		<fields name="params" addfieldpath="/modules/mod_sj_newsticker/core/fields">
+			
+			<fieldset name="basic">
+				<field name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
+				<field name="module_width" type="text" default="0" label="Module width (px)" description="Module width. 0 = 100%" />
+				<field name="module_height" type="text" default="300" label="Module height (px)" description="Module height" />					
+			</fieldset>
+			
+			<fieldset name="source" label="Source Options">
+				<field name="source" type="sjcontentcategories" multiple="multiple" size="12" default="" label="Data Source" description="Select category" />
+				<field name="subcategories" type="radio" default="0" label="Include subcategories" description="Including products belonging to sub-categories.">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="source_order_by" type="list" default="created" label="Sort Order By" description="Sort order type">
+					<option value="created">Recently Added</option>
+					<option value="hits">Most Views</option>
+					<option value="modified">Recently Modified</option>
+					<option value="ordering">Ordering</option>
+					<option value="title">Title</option>
+					<option value="random">Random</option>
+				</field>
+				<field name="source_filter" type="list" default="0" label="Source Filter" description="Source Filter">
+					<option value="0">All Item</option>
+					<option value="1">None Featured</option>
+					<option value="2">Only Featured</option>
+				</field>
+				<field name="source_limit" type="text" default="7" label="Item Count" description="The amount of Items which you want to show in the module" />				
+			</fieldset>
+			
+			<fieldset name="Content Options" label="Items Options">				
+				<field name="item_title_display" type="radio" default="1" label="Show Title Of Items" description="Show Item Title">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<!-- field name="item_title_linkable" type="radio" default="1" label="Link for title" description="Link for title">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field-->
+				<field name="item_title_max_characs" type="text" default="-1" label="Items Title Max Chars" description="Shorten Title of items by length, -1 to unlimit length." />
+				<field name="item_desc_display" type="radio" default="1" label="Show Desc" description="Show Description of Item">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="item_desc_max_characs" type="text" default="-1" label="Items Description Max Chars" description="Shorten description of items by length, -1 to unlimit length." />
+				<field name="item_description_striptags" type="radio" default="1" label="Strip html tags" description="Strip html tags in description or keep them.">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="item_readmore_display" type="radio" default="1" label="Show Read More" description="Show Read More">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="item_readmore_text" type="text" default="Readmore" label="Read More Text" description="Read More Text" />
+				<field name="item_link_target" type="list" default="_self" label="Open Link" description="The Type shows when you click on the link">
+					<option value="_blank">New Window</option>
+					<option value="_self">Same Window</option>
+				</field>
+			</fieldset>	
+			
+			<fieldset name="image_option" label="Image Options">
+				<field name="item_image_display" type="radio" default="1" label="Show Image" description="Show Image">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<!--field name="item_image_linkable" type="radio" default="1" label="Link for image" description="Link for image">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field-->
+				<field name="item_image_width" type="text" default="60" label="Image width" description="Image width" />
+				<field name="item_image_height" type="text" default="60" label="Image height" description="Image height" />
+				<field name="item_image_background" type="text" default="#FFFFFF" label="Image background" description="Image background" />
+				<field name="item_image_function" type="sjthumbnailmode" label="Image mode">
+					<option value="stretch">Stretch</option>
+					<option value="center">Center</option>
+					<option value="fill">Fill</option>
+					<option value="fit">Fit</option>
+				</field>
+			</fieldset>					
+
+			<fieldset name="advanced">
+				<field name="include_jquery" type="radio" default="1" label="Include jQuery" description="Do you want include jQuery library?">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="custom_url" type="textarea" cols="35" rows="5" default="" label="Custom URL" description="Custom url of items. This only supports  Item Ids Type. Syntax: &lt;br/&gt; id1:url1 &lt;br/&gt; id2:url2 &lt;br/&gt; ..." />				
+				<field name="owncache" type="list" default="1" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+			</fieldset>
+			
+		</fields>
+		
+	</config>	
+</extension>
+

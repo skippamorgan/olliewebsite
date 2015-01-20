@@ -1,0 +1,12 @@
+/******
+/**
+ * @package VerticalScroll JT1 Module for Joomla! 2.5
+ * @version $Id: 1.0 
+ * @author muratyil
+ * @Copyright (C) 2012- muratyil
+ * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+**/
+/***you can create your own display settings here**/
+#scroller a:link,#scroller a:visited{ padding-bottom:4px; display:block; text-decoration:none}
+#scroller a:hover{  text-decoration: underline}
+
